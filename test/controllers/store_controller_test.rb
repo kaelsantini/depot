@@ -10,4 +10,15 @@ class StoreControllerTest < ActionDispatch::IntegrationTest
     assert_select '.price', /\$[,\d]+\.\d\d/
   end
 
+  test "counter should appear after five hits" do
+    get store_index_url
+    get store_index_url
+    get store_index_url
+    get store_index_url
+    get store_index_url
+    assert_select 'small', 0
+    get store_index_url
+    assert_select 'small', 1
+  end
+
 end
