@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
 
@@ -69,7 +70,12 @@ class CartsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cart
-      @cart = Cart.find(params[:id])
+      if params[:id].to_s == session[:cart_id].to_s
+        @cart = Cart.find(params[:id])
+      else
+        invalid_cart
+      end
+      
     end
 
     # Only allow a list of trusted parameters through.

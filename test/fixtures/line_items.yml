@@ -1,7 +1,24 @@
 one:
-  product: two
-  cart: one
+  cart: my_cart
+  product: ruby
+  quantity: 1
+  price: 3.30
 
 two:
+  cart: my_cart
   product: two
-  cart: two
+  quantity: 2
+  price: 4.50
+
+
+three:
+  cart: his_cart
+  product: ruby
+  quantity: 1
+  price: 3.30
+
+four:
+  cart: his_cart
+  product: ruby
+  quantity: 1
+  price: 3.30
