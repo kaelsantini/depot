@@ -1,6 +1,7 @@
 class StoreController < ApplicationController
-  include StoreCounter
-  
+  include CurrentCart, StoreCounter
+
+  before_action :set_cart
   before_action :count_hits, olny: [:index]
 
   def index
