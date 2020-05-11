@@ -70,12 +70,14 @@ class CartsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cart
-      if params[:id].to_s == session[:cart_id].to_s
-        @cart = Cart.find(params[:id])
-      else
-        invalid_cart
-      end
-      
+      @cart = Cart.find(params[:id])
+      # Play Time that broke app
+      #if params[:id].to_s == session[:cart_id].to_s
+      #  @cart = Cart.find(params[:id])
+      #else
+      #  invalid_cart
+      #end
+  
     end
 
     # Only allow a list of trusted parameters through.

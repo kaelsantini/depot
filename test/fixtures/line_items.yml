@@ -6,7 +6,7 @@ one:
 
 two:
   cart: my_cart
-  product: ruby
+  product: one
   order: one
   quantity: 2
   price: 4.50
