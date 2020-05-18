@@ -17,7 +17,7 @@
   <body>
     <header class="main">
     <aside>
-      <%= form_tag store_index_path, class: 'locale' do %>
+      <%= form_tag store_index_path, class: 'locale', method: :get do %>
         <%= select_tag 'set_locale', options_for_select(LANGUAGES, I18n.locale.to_s), onchange: 'this.form.submit()' %>
         <%= submit_tag 'Submit', id: "submit_locale_change" %>
       <% end %>
