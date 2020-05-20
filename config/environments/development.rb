@@ -69,4 +69,5 @@ Rails.application.configure do
     user_name: "",
     password: ""
   }
+  config.active_storage.service = :local
 end
