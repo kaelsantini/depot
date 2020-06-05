@@ -38,12 +38,10 @@ class OrdersController < ApplicationController
         session[:cart_id] = nil
         ChargeOrderJob.perform_later(@order, pay_type_params.to_h)
         format.html { redirect_to store_index_url(locale: I18n.locale), notice: I18n.t('.thanks') }
-        format.json { render :show, status: :created,
-          location: @order }
+        format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
-        format.json { render json: @order.errors,
-          status: :unprocessable_entity }
+        format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
   end
